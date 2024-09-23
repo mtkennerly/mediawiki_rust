@@ -227,8 +227,10 @@ impl Api {
     /// Loads the site info.
     /// Should only ever be called from `new()`
     async fn load_site_info(&mut self) -> Result<&Value, MediaWikiError> {
+        println!("loading site info");
         let params = hashmap!["action".to_string()=>"query".to_string(),"meta".to_string()=>"siteinfo".to_string(),"siprop".to_string()=>"general|namespaces|namespacealiases|libraries|extensions|statistics".to_string()];
-        self.site_info = self.get_query_api_json(&params).await?;
+        self.site_info = dbg!(self.get_query_api_json(&params).await)?;
+        println!("loaded site info");
         Ok(&self.site_info)
     }
 

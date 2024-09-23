@@ -7,7 +7,6 @@
     unsafe_code,
     unstable_features,
     unused_import_braces,
-    unused_qualifications
 )]
 
 #[cfg(test)]
