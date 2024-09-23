@@ -408,7 +408,8 @@ impl Api {
         let mut cumulative: u64 = 0;
         loop {
             self.set_cumulative_maxlag_params(&mut params, method, cumulative);
-            let t = dbg!(self.query_api_raw(&params, method).await)?;
+            let t = self.query_api_raw(&params, method).await?;
+            println!("response = {t}");
             let v: Value = serde_json::from_str(&t)?;
             match self.check_maxlag(&v) {
                 Some(lag_seconds) => {
