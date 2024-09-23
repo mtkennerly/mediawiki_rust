@@ -404,6 +404,7 @@ impl Api {
         let mut params = params.clone();
         let mut attempts_left = self.max_retry_attempts;
         params.insert("format".to_string(), "json".to_string());
+        dbg!((&method, &params));
         let mut cumulative: u64 = 0;
         loop {
             self.set_cumulative_maxlag_params(&mut params, method, cumulative);
