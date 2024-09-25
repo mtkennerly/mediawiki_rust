@@ -22,7 +22,7 @@ use url::Url;
 /// Alias for a namespace (could be -1 for Special pages etc.)
 pub type NamespaceID = i64;
 
-const DEFAULT_USER_AGENT: &str = "Rust mediawiki API";
+const DEFAULT_USER_AGENT: &str = "ludusavi-manifest";
 const DEFAULT_MAXLAG: Option<u64> = Some(5);
 const DEFAULT_MAX_RETRY_ATTEMPTS: u64 = 5;
 const DEFAULT_TIMEOUT: Duration = Duration::from_secs(60);
